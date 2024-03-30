@@ -1,0 +1,68 @@
+---
+export interface Props {
+  label: string;
+  name1: string;
+  radio1: string;
+  name2: string;
+  radio2: string;
+}
+
+const { label, name1, radio1, name2, radio2 } = Astro.props as Props;
+---
+
+<fieldset class="group-container">
+  <legend class="label">{label}</legend>
+  <div>
+    <label for={name1}>{radio1}</label>
+    <input class="radio-button" type="radio" id={name1} />
+    <label for={name2}>{radio2}</label>
+    <input class="radio-button" type="radio" id={name2} />
+  </div>
+</fieldset>
+
+<style>
+  .group-container {
+    margin-top: 20px;
+    border: none;
+  }
+  .label {
+    font-weight: bold;
+  }
+  .radio-button {
+    /* -webkit-appearance: none; */
+    /* appearance: none; */
+    margin: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid #753d98;
+    border-radius: 50%;
+    ::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 0.75em;
+      height: 0.75em;
+      margin: 3px;
+    }
+    :hover {
+      ::after {
+        background-color: blue;
+      }
+    }
+    :focus {
+      outline: 2px solid black;
+    }
+    :checked {
+      ::after {
+        background-color: purple;
+      }
+      :hover {
+        background-color: white;
+        border: 2px solid purple;
+        ::after {
+          background-color: purple;
+        }
+      }
+    }
+  }
+</style>

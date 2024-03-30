@@ -1,0 +1,42 @@
+---
+export interface Props {
+  label: string;
+  name: string;
+  placeholder: string;
+}
+
+const { label, name, placeholder } = Astro.props as Props;
+---
+
+<div class="input-container">
+  <label class="label" for="session-name" class="label">{label}</label>
+  <input
+    type="text"
+    id={name}
+    name={name}
+    class="input"
+    placeholder={placeholder}
+  />
+</div>
+
+<style>
+  .input-container {
+    margin-top: 20px;
+  }
+  .input {
+    width: 226px;
+    height: 35px;
+    border: 2px solid #753d98;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+</style>

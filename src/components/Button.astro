@@ -1,0 +1,30 @@
+---
+export interface Props {
+  text: string;
+  type?: string;
+}
+
+const { text, type } = Astro.props as Props;
+---
+
+<button class="button-primary">{text}</button>
+
+<style>
+  .button-primary {
+    width: 226px;
+    height: 35px;
+    background-color: #753d98;
+    border-radius: 0.5rem;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: snow;
+    font-size: large;
+    vertical-align: middle;
+    margin-top: 20px;
+  }
+
+  .button-text {
+    color: snow;
+  }
+</style>
